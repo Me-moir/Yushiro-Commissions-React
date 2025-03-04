@@ -408,9 +408,9 @@ const PriceCard = React.memo(({ row, config, shouldAnimate, sectionId, index, ex
       <div className="price-card-header">
         <div className="card-image">
         <img 
-          src={`/Yushiro-Commissions-React/assets/${imageName}.webp`} 
+          src={`${import.meta.env.BASE_URL}assets/${imageName}.webp`} 
           alt={bundleName} 
-          onError={(e) => { e.target.src = '/Yushiro-Commissions-React/assets/default-bundle.webp'; }}
+          onError={(e) => { e.target.src = `${import.meta.env.BASE_URL}assets/default-bundle.webp`; }}
           loading="lazy"
         />
         </div>
