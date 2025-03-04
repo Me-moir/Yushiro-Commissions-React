@@ -1,0 +1,354 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1a1b25; 
+  color: #e0e0e0;
+}
+
+body, html {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+.main-content {
+  width: 75%;
+  margin-left: 25%; 
+  box-sizing: border-box;
+  flex: 1;
+  overflow-y: auto;
+  transition: margin-left 0.3s ease;
+}
+
+.main-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%; 
+  background-color: #121212;
+  position: relative;
+  padding: 0.75rem 0.75rem; 
+  box-sizing: border-box;
+}
+
+
+.content-wrapper .content-section {
+  padding: 1.5rem 1rem;
+}
+
+
+.content-area {
+  flex: 1;
+  padding-top: 70px; 
+  padding-bottom: 15px; 
+  padding-left: 0;
+  padding-right: 0;
+  overflow-y: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.top-navbar {
+  position: fixed;
+  top: 0;
+  left: 25%; /* Match sidebar width */
+  width: 75%; /* Take remaining width */
+  height: 55px; /* Reduced from 60px */
+  background-color: #1a1a1a;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px; /* Reduced from 20px */
+  z-index: 99;
+  color: #e0e0e0;
+  border-bottom: 1px solid #333;
+  box-sizing: border-box;
+}
+
+.current-section {
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+.tab-label {
+  margin-right: 4px; /* Reduced from 5px */
+}
+
+.subtab-label {
+  color: #9e9e9e;
+}
+
+/* Updates for search section */
+.search-section {
+  position: relative;
+}
+
+.search-toggle {
+  background-color: #252525;
+  border: 1px solid #333;
+  width: 38px; /* Reduced from 40px */
+  height: 38px; /* Reduced from 40px */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem; /* Reduced from 1.2rem */
+  color: #b59f5b;
+}
+
+.expanded-search {
+  position: absolute;
+  top: 45px; /* Reduced from 50px */
+  right: 0;
+  width: 290px; /* Reduced from 300px */
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  padding: 12px; /* Reduced from 15px */
+  z-index: 101;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 8px; /* Reduced from 10px */
+  border: 1px solid #333;
+  border-radius: 4px;
+  margin-bottom: 8px; /* Reduced from 10px */
+  background-color: #252525;
+  color: #e0e0e0;
+  box-sizing: border-box;
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Reduced from 10px */
+  width: 100%;
+}
+
+.filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.filter label {
+  font-size: 0.85rem; /* Reduced from 0.9rem */
+  font-weight: 500;
+  color: #e0e0e0;
+}
+
+.filter select {
+  padding: 6px; /* Reduced from 8px */
+  border: 1px solid #333;
+  border-radius: 4px;
+  width: 145px; /* Reduced from 150px */
+  background-color: #252525;
+  color: #e0e0e0;
+}
+
+/* Responsive adjustments - more compact */
+@media (max-width: 1200px) {
+  .main-container {
+    padding: 0.5rem;
+  }
+  
+  .content-area {
+    padding-top: 65px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .top-navbar {
+    left: 260px; /* Reduced from 280px */
+    width: calc(100% - 260px);
+    height: 52px;
+  }
+  
+  .main-container {
+    padding: 0.5rem 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 220px; /* Reduced from 240px */
+  }
+
+
+  .main-content {
+    width: calc(100% - 220px);
+    margin-left: 220px;
+  }
+  
+  .top-navbar {
+    left: 220px;
+    width: calc(100% - 220px);
+    height: 50px;
+    padding: 0 8px;
+  }
+  
+  .main-container {
+    padding: 0.4rem;
+  }
+  
+  .content-area {
+    padding-top: 60px;
+    padding-bottom: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    width: 60px; /* Reduced from 70px */
+  }
+  
+  .main-content {
+    width: calc(100% - 60px);
+    margin-left: 60px;
+  }
+  
+  .top-navbar {
+    left: 60px;
+    width: calc(100% - 60px);
+    padding: 0 6px;
+    height: 45px;
+  }
+  
+  .expanded-search {
+    width: 230px; /* Reduced from 250px */
+    padding: 10px;
+    top: 40px;
+  }
+  
+  .main-container {
+    padding: 0.25rem;
+  }
+  
+  .content-area {
+    padding-top: 50px;
+    padding-bottom: 10px;
+  }
+  
+  .search-toggle {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+/* Small mobile improvements */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 50px;
+  }
+  
+  .main-content {
+    width: calc(100% - 50px);
+    margin-left: 50px;
+  }
+  
+  .top-navbar {
+    left: 50px;
+    width: calc(100% - 50px);
+    padding: 0 5px;
+    height: 42px;
+  }
+  
+  .expanded-search {
+    width: 210px;
+    padding: 8px;
+  }
+  
+  .main-container {
+    padding: 0.2rem;
+  }
+  
+  .search-toggle {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+  
+  .filter label {
+    font-size: 0.8rem;
+  }
+  
+  .filter select {
+    width: 130px;
+    padding: 5px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .sidebar {
+    width: 45px;
+  }
+  
+  .main-content {
+    width: calc(100% - 45px);
+    margin-left: 45px;
+  }
+  
+  .top-navbar {
+    left: 45px;
+    width: calc(100% - 45px);
+    height: 40px;
+  }
+  
+  .search-toggle {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .expanded-search {
+    width: 190px;
+  }
+  
+  .main-container {
+    padding: 0.15rem;
+  }
+  
+  .content-area {
+    padding-top: 45px;
+    padding-bottom: 8px;
+  }
+}
+
+/* Mobile sidebar open state */
+@media screen and (max-width: 767px) {
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .app-container.sidebar-open .main-content {
+    overflow: hidden;
+  }
+  
+  .app-container:not(.sidebar-open) .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .app-container:not(.sidebar-open) .top-navbar {
+    left: 0;
+    width: 100%;
+  }
+}
