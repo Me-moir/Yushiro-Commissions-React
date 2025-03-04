@@ -407,12 +407,12 @@ const PriceCard = React.memo(({ row, config, shouldAnimate, sectionId, index, ex
     >
       <div className="price-card-header">
         <div className="card-image">
-          <img 
-            src={`src/assets/${imageName}.webp`} 
-            alt={bundleName} 
-            onError={(e) => { e.target.src = 'src/assets/default-bundle.webp'; }}
-            loading="lazy"
-          />
+        <img 
+          src={`/Yushiro-Commissions-React/assets/${imageName}.webp`} 
+          alt={bundleName} 
+          onError={(e) => { e.target.src = '/Yushiro-Commissions-React/assets/default-bundle.webp'; }}
+          loading="lazy"
+        />
         </div>
         <div className="card-info">
           <h3>
@@ -556,7 +556,7 @@ function PriceListContent({ searchQuery, activeTab, activeSubTab, onTabChange })
     bundleNames.forEach(bundleName => {
       const imageName = bundleName.toLowerCase().replace(/\s+/g, '-');
       const img = new Image();
-      img.src = `src/assets/${imageName}.webp`;
+      img.src = `/Yushiro-Commissions-React/assets/${imageName}.webp`;
     });
   }, []);
 
