@@ -404,13 +404,13 @@ const PriceCard = React.memo(({ row, config, shouldAnimate, sectionId, index, ex
       className={`price-card ${expanded ? 'expanded' : ''} ${animationClass} clickable-card ${cardColorClass}`} 
       style={shouldAnimate ? { animationDelay: `${0.05 * index}s` } : {}}
       onClick={() => toggleCardExpansion(cardId)}
-    >
+>
       <div className="price-card-header">
         <div className="card-image">
         <img 
-          src={`${import.meta.env.BASE_URL}assets/${imageName}.webp`} 
+          src={`${import.meta.env.BASE_URL}src/assets/${imageName}.webp`} 
           alt={bundleName} 
-          onError={(e) => { e.target.src = `${import.meta.env.BASE_URL}assets/default-bundle.webp`; }}
+          onError={(e) => { e.target.src = `${import.meta.env.BASE_URL}src/assets/default-bundle.webp`; }}
           loading="lazy"
         />
         </div>
